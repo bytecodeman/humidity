@@ -5,7 +5,7 @@ import {
   calcRelativeHumidity,
 } from "../library/HumidityCalculations";
 
-function HumidityForm(props) {
+const HumidityForm = (props) => {
   const [formData, setFormData] = useState({
     tempScale: "",
     actualTemperature: "",
@@ -15,6 +15,7 @@ function HumidityForm(props) {
   const [errMsg, setErrMsg] = useState("");
 
   const reset = () => {
+    setErrMsg("");
     setFormData({
       tempScale: "",
       actualTemperature: "",
@@ -31,7 +32,6 @@ function HumidityForm(props) {
       dewPoint.trim(),
       relativeHumidity.trim(),
     ];
-    setErrMsg("");
 
     function isNum(val) {
       return !isNaN(val);
@@ -50,6 +50,7 @@ function HumidityForm(props) {
           setErrMsg("Not Blank Fields must be numbers");
         } else {
           const calc = calcActualTemp(dp, rh, tempScale);
+          setErrMsg("");
           setFormData({ ...formData, actualTemperature: calc });
         }
         break;
@@ -61,6 +62,7 @@ function HumidityForm(props) {
           setErrMsg("Not Blank Fields must be numbers");
         } else {
           const calc = calcDewPoint(ta, rh, tempScale);
+          setErrMsg("");
           setFormData({ ...formData, dewPoint: calc });
         }
         break;
@@ -72,6 +74,7 @@ function HumidityForm(props) {
           setErrMsg("Not Blank Fields must be numbers");
         } else {
           const calc = calcRelativeHumidity(ta, dp, tempScale);
+          setErrMsg("");
           setFormData({ ...formData, relativeHumidity: calc });
         }
         break;
@@ -225,6 +228,6 @@ function HumidityForm(props) {
       </div>
     </form>
   );
-}
+};
 
 export default HumidityForm;
