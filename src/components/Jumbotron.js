@@ -14,15 +14,13 @@ function JumboTron() {
         <h1 className="font-bold text-3xl mb-5 text-center">
           Calculate Temperature, Dewpoint, or Relative Humidity
         </h1>
-        <div className="flex justify-center">
+        <div className="flex flex-col justify-center gap-y-10 items-center md:flex-row md:gap-x-10 md:gap-y-0">
           <ImgWithFallback
             src={logoWebP}
             fallback={logoPng}
             alt="Humidity Calculator"
             title="Humidity Calculator"
-            className="img-fluid rounded mr-5 cursor-pointer"
-            width="300px"
-            height="auto"
+            className="img-fluid rounded cursor-pointer max-w-xs"
             onClick={handleShowModal}
           />
           <div>
@@ -62,7 +60,7 @@ function JumboTron() {
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
           <div className="fixed z-10 inset-0 overflow-y-auto">
-            <div className="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+            <div className="flex items-center justify-center min-h-full m-4 text-center">
               <div className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
                 <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
@@ -85,11 +83,11 @@ function JumboTron() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                <div className="flex flex-row-reverse px-4 py-3">
                   <button
                     type="button"
                     onClick={handleCloseModal}
-                    className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                    className="block w-full mb-5 px-6 py-2.5 bg-primary text-white font-bold rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out md:inline md:w-auto"
                   >
                     Close
                   </button>
