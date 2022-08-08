@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import JumboTron from "./components/Jumbotron";
+import HumidityForm from "./components/HumidityForm";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto">
+        <div className="w-3/4 mx-auto">
+          <JumboTron />
+          <HumidityForm />
+        </div>
+      </div>
     </div>
   );
 }

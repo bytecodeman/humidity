@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test Form</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#0d6efd", //"#007bff",
+                            primaryhover: "#0b5ed7",
+                            secondary: "#6c757d",
+                            secondaryhover: "#5c636a"
+                        }
+                    },
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="flex min-h-screen items-center justify-center bg-white">
+            <form class="w-full max-w-lg">
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-2/5 mb-1 md:mb-0">
+                        <label for="fahrenheitScale" class="text-gray-500 block font-bold md:text-right pr-4">
+                            Temperature Scale
+                        </label>
+                    </div>
+                    <div class="md:w-3/5 border border-gray-400 p-2 rounded md:border-none">
+                        <div class="flex items-center mb-4">
+                            <input type="radio" id="fahrenheitScale" name="tempScale" value="F"
+                                   class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300">
+                            <label for="fahrenheitScale" class="text-sm font-medium text-gray-900 ml-2 block">
+                                Fahrenheit
+                            </label>
+                        </div>
+
+                        <div class="flex items-center">
+                            <input type="radio" id="celciusScale" name="tempScale" value="C"
+                                   class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300">
+                            <label for="celciusScale" class="text-sm font-medium text-gray-900 ml-2 block">
+                                Celcius
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-2/5 mb-1 md:mb-0">
+                        <label class="text-gray-500 block font-bold md:text-right pr-4" for="actualTemperature">
+                            Actual Temperature <b class="text-2xl">&deg;</b>
+                        </label>
+                    </div>
+                    <div class="md:w-3/5">
+                        <input type="text" id="actualTemperature" name="actualTemperature" value=""
+                               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-1 focus:bg-white">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-2/5 mb-1 md:mb-0">
+                        <label class="text-gray-500 block font-bold md:text-right pr-4" for="dewPoint">
+                            Dew Point <b class="text-2xl">&deg;</b>
+                        </label>
+                    </div>
+                    <div class="md:w-3/5">
+                        <input type="text" id="dewPoint" name="dewPoint" value=""
+                               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-1 focus:bg-white">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-2/5 mb-1 md:mb-0">
+                        <label class="text-gray-500 block font-bold md:text-right pr-4" for="relativeHumidity">
+                            Relative Humidity <b class="text-2xl">%</b>
+                        </label>
+                    </div>
+                    <div class="md:w-3/5">
+                        <input type="text" id="relativeHumidity" name="relativeHumidity" value=""
+                               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-1 focus:bg-white">
+                    </div>
+                </div>
+
+                <div class="md:flex md:items-center">
+                    <div class="md:w-2/5"></div>
+                    <div class="md:w-3/5">
+                        <button class="bg-primary hover:bg-primaryhover focus:outline-1 text-white font-bold py-2 px-4 rounded"
+                                type="button">
+                            Calculate
+                        </button>
+                        <button class="bg-secondary hover:bg-secondaryhover focus:outline-1 text-white font-bold py-2 px-4 rounded"
+                                type="button">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
