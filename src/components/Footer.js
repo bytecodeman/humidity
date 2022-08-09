@@ -1,6 +1,6 @@
-function Footer() {
+const Footer = () => {
   return (
-    <section id="footer" className="flex justify-center mb-24">
+    <footer className="flex justify-center mb-24">
       <div>
         <h3 className="font-bold mb-2">Equations Used:</h3>
         <div className="font-mono mb-2">
@@ -25,8 +25,8 @@ function Footer() {
           </li>
         </ul>
       </div>
-    </section>
+    </footer>
   );
-}
+};
 
 export default Footer;
