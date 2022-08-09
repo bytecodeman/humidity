@@ -8,6 +8,7 @@ module.exports = {
         primaryhover: "#0b5ed7",
         secondary: "#6c757d",
         secondaryhover: "#5c636a",
+        navbar: "#007bff",
       },
     },
     plugins: [],

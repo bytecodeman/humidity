@@ -14,7 +14,7 @@ function JumboTron() {
         <h1 className="font-bold text-3xl mb-5 text-center">
           Calculate Temperature, Dewpoint, or Relative Humidity
         </h1>
-        <div className="flex flex-col justify-center gap-y-10 items-center md:flex-row md:gap-x-10 md:gap-y-0">
+        <div className="flex flex-col justify-center gap-y-10 items-center md:flex-row md:gap-x-10 md:gap-y-0 mb-6">
           <ImgWithFallback
             src={logoWebP}
             fallback={logoPng}

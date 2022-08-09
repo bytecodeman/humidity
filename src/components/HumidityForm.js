@@ -89,14 +89,14 @@ const HumidityForm = (props) => {
   };
 
   return (
-    <form className="w-full max-w-lg mx-auto">
+    <form className="w-full max-w-lg mx-auto mb-10">
       {errMsg && (
         <div className="font-bold text-2xl text-red-500 text-center mb-5">
           {errMsg}
         </div>
       )}
       <div className="md:flex md:items-center mb-6">
-        <div className="md:w-2/5 mb-1 md:mb-0">
+        <div className="md:w-1/2 mb-1 md:mb-0">
           <label
             htmlFor="fahrenheitScale"
             className="text-gray-500 block font-bold md:text-right pr-4"
@@ -104,7 +104,7 @@ const HumidityForm = (props) => {
             Temperature Scale
           </label>
         </div>
-        <div className="md:w-3/5 border border-gray-400 p-2 rounded md:border-none">
+        <div className="md:1/2 border border-gray-400 p-2 rounded md:border-none">
           <div className="flex items-center mb-4">
             <input
               type="radio"
@@ -144,15 +144,15 @@ const HumidityForm = (props) => {
       </div>
 
       <div className="md:flex md:items-center mb-6">
-        <div className="md:w-2/5 mb-1 md:mb-0">
+        <div className="md:w-1/2 mb-1 md:mb-0">
           <label
             className="text-gray-500 block font-bold md:text-right pr-4"
             htmlFor="actualTemperature"
           >
-            Actual Temperature <b className="text-2xl">&deg;</b>
+            Actual Temperature <b className="text-2xl">(T) &deg;</b>
           </label>
         </div>
-        <div className="md:w-3/5">
+        <div className="md:w-1/2">
           <input
             type="text"
             id="actualTemperature"
@@ -165,15 +165,15 @@ const HumidityForm = (props) => {
         </div>
       </div>
       <div className="md:flex md:items-center mb-6">
-        <div className="md:w-2/5 mb-1 md:mb-0">
+        <div className="md:w-1/2 mb-1 md:mb-0">
           <label
             className="text-gray-500 block font-bold md:text-right pr-4"
             htmlFor="dewPoint"
           >
-            Dew Point <b className="text-2xl">&deg;</b>
+            Dew Point <b className="text-2xl">(TD) &deg;</b>
           </label>
         </div>
-        <div className="md:w-3/5">
+        <div className="md:w-1/2">
           <input
             type="text"
             id="dewPoint"
@@ -186,15 +186,15 @@ const HumidityForm = (props) => {
         </div>
       </div>
       <div className="md:flex md:items-center mb-10">
-        <div className="md:w-2/5 mb-1 md:mb-0">
+        <div className="md:w-1/2 mb-1 md:mb-0">
           <label
             className="text-gray-500 block font-bold md:text-right pr-4"
             htmlFor="relativeHumidity"
           >
-            Relative Humidity <b className="text-2xl">%</b>
+            Relative Humidity <b className="text-2xl">(RH) %</b>
           </label>
         </div>
-        <div className="md:w-3/5">
+        <div className="md:w-1/2">
           <input
             type="text"
             id="relativeHumidity"
@@ -208,8 +208,8 @@ const HumidityForm = (props) => {
       </div>
 
       <div className="mb-20 md:mb-0 md:flex md:items-center">
-        <div className="md:w-2/5"></div>
-        <div className="md:w-3/5">
+        <div className="md:w-1/2"></div>
+        <div className="md:w-1/2">
           <button
             className="bg-primary hover:bg-primaryhover focus:outline-1 text-white font-bold py-2 px-4 rounded mr-3"
             type="button"
