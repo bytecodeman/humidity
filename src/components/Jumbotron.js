@@ -56,13 +56,24 @@ function JumboTron() {
           </div>
         </div>
         <div className="text-center">
-          <TwitterShareButton url={window.location.href} className="mr-5">
+          <TwitterShareButton
+            url={window.location.href}
+            title={document.title}
+            className="mr-5"
+          >
             <TwitterIcon size={32} round={true} />
           </TwitterShareButton>
-          <LinkedinShareButton url={window.location.href} className="mr-5">
+          <LinkedinShareButton
+            url={window.location.href}
+            title={document.title}
+            className="mr-5"
+          >
             <LinkedinIcon size={32} round={true} />
           </LinkedinShareButton>
-          <FacebookShareButton url={window.location.href}>
+          <FacebookShareButton
+            url={window.location.href}
+            title={document.title}
+          >
             <FacebookIcon size={32} round={true} />
           </FacebookShareButton>
         </div>
