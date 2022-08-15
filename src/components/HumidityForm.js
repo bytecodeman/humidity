@@ -53,7 +53,7 @@ const HumidityForm = (props) => {
           setErrMsg("Not Blank Fields must be numbers");
         } else {
           const actualTemperature = calcActualTemp(dp, rh, tempScale);
-          const heatIndex = calcHeatIndex(actualTemperature, rh);
+          const heatIndex = calcHeatIndex(actualTemperature, rh, tempScale);
           setErrMsg("");
           setFormData({ ...formData, actualTemperature, heatIndex });
         }
@@ -66,7 +66,7 @@ const HumidityForm = (props) => {
           setErrMsg("Not Blank Fields must be numbers");
         } else {
           const dewPoint = calcDewPoint(ta, rh, tempScale);
-          const heatIndex = calcHeatIndex(ta, rh);
+          const heatIndex = calcHeatIndex(ta, rh, tempScale);
           setErrMsg("");
           setFormData({ ...formData, dewPoint, heatIndex });
         }
@@ -79,7 +79,11 @@ const HumidityForm = (props) => {
           setErrMsg("Not Blank Fields must be numbers");
         } else {
           const relativeHumidity = calcRelativeHumidity(ta, dp, tempScale);
-          const heatIndex = calcHeatIndex(actualTemperature, relativeHumidity);
+          const heatIndex = calcHeatIndex(
+            actualTemperature,
+            relativeHumidity,
+            tempScale
+          );
           setErrMsg("");
           setFormData({ ...formData, relativeHumidity, heatIndex });
         }
@@ -111,7 +115,7 @@ const HumidityForm = (props) => {
               Temperature Scale
             </label>
           </div>
-          <div className="md:1/2 border border-gray-400 p-2 rounded md:border-none">
+          <div className="md:1/2 border-2 border-gray-200 p-2 rounded md:border-none">
             <div className="flex items-center mb-4">
               <input
                 type="radio"
@@ -230,7 +234,7 @@ const HumidityForm = (props) => {
               name="heatIndex"
               value={formData.heatIndex}
               placeholder="Heat Index Display Only"
-              readonly={true}
+              readOnly={true}
               className="border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-1"
             />
           </div>

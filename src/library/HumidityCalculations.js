@@ -71,8 +71,10 @@ function calcHeatIndex(actualTemp, rel, tempScale) {
   const rh = +rel;
 
   let temp = +actualTemp;
+  console.log(tempScale);
   if (tempScale === "C") {
     temp = c2f(temp);
+    console.log(temp);
   }
 
   let hi;
