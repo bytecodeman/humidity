@@ -50,7 +50,11 @@ function JumboTron() {
             <h3 className="font-bold mb-2">Instructions</h3>
             <ol className="list-decimal list-inside">
               <li>Choose a temperature scale.</li>
-              <li>Enter values in 2 of the 3 boxes.</li>
+              <li>
+                Enter values in 2 of the 3 inputs (Actual Temperature, Dew
+                Point, or Relative Humidity).
+              </li>
+              <li>Heat Index is an output value.</li>
               <li>Press "Calculate" to find the missing value.</li>
             </ol>
           </div>

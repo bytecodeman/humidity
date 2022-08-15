@@ -3,6 +3,7 @@ import {
   calcActualTemp,
   calcDewPoint,
   calcRelativeHumidity,
+  calcHeatIndex,
 } from "../library/HumidityCalculations";
 
 const HumidityForm = (props) => {
@@ -11,6 +12,7 @@ const HumidityForm = (props) => {
     actualTemperature: "",
     dewPoint: "",
     relativeHumidity: "",
+    heatIndex: "",
   });
   const [errMsg, setErrMsg] = useState("");
 
@@ -21,6 +23,7 @@ const HumidityForm = (props) => {
       actualTemperature: "",
       dewPoint: "",
       relativeHumidity: "",
+      heatIndex: "",
     });
   };
 
@@ -49,9 +52,10 @@ const HumidityForm = (props) => {
         } else if (!isNum(dp) || !isNum(rh)) {
           setErrMsg("Not Blank Fields must be numbers");
         } else {
-          const calc = calcActualTemp(dp, rh, tempScale);
+          const actualTemperature = calcActualTemp(dp, rh, tempScale);
+          const heatIndex = calcHeatIndex(actualTemperature, rh);
           setErrMsg("");
-          setFormData({ ...formData, actualTemperature: calc });
+          setFormData({ ...formData, actualTemperature, heatIndex });
         }
         break;
 
@@ -61,9 +65,10 @@ const HumidityForm = (props) => {
         } else if (!isNum(ta) || !isNum(rh)) {
           setErrMsg("Not Blank Fields must be numbers");
         } else {
-          const calc = calcDewPoint(ta, rh, tempScale);
+          const dewPoint = calcDewPoint(ta, rh, tempScale);
+          const heatIndex = calcHeatIndex(ta, rh);
           setErrMsg("");
-          setFormData({ ...formData, dewPoint: calc });
+          setFormData({ ...formData, dewPoint, heatIndex });
         }
         break;
 
@@ -73,9 +78,10 @@ const HumidityForm = (props) => {
         } else if (!isNum(ta) || !isNum(dp)) {
           setErrMsg("Not Blank Fields must be numbers");
         } else {
-          const calc = calcRelativeHumidity(ta, dp, tempScale);
+          const relativeHumidity = calcRelativeHumidity(ta, dp, tempScale);
+          const heatIndex = calcHeatIndex(actualTemperature, relativeHumidity);
           setErrMsg("");
-          setFormData({ ...formData, relativeHumidity: calc });
+          setFormData({ ...formData, relativeHumidity, heatIndex });
         }
         break;
 
@@ -203,6 +209,28 @@ const HumidityForm = (props) => {
               value={formData.relativeHumidity}
               onChange={handleChange}
               placeholder="Enter Relative Humidity"
+              className="border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-1"
+            />
+          </div>
+        </div>
+
+        <div className="md:flex md:items-center mb-10">
+          <div className="md:w-1/2 mb-1 md:mb-0">
+            <label
+              className="text-gray-500 block font-bold md:text-right pr-4"
+              htmlFor="heatIndex"
+            >
+              Heat Index <b className="text-2xl">&deg;</b>
+            </label>
+          </div>
+          <div className="md:w-1/2">
+            <input
+              type="text"
+              id="heatIndex"
+              name="heatIndex"
+              value={formData.heatIndex}
+              placeholder="Heat Index Display Only"
+              readonly={true}
               className="border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-1"
             />
           </div>
