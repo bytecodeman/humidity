@@ -7,19 +7,19 @@ import {
 } from "../library/HumidityCalculations";
 
 const HumidityForm = (props) => {
+  const [errMsg, setErrMsg] = useState("");
   const [formData, setFormData] = useState({
-    tempScale: "",
+    tempScale: "F",
     actualTemperature: "",
     dewPoint: "",
     relativeHumidity: "",
     heatIndex: "",
   });
-  const [errMsg, setErrMsg] = useState("");
 
   const reset = () => {
     setErrMsg("");
     setFormData({
-      tempScale: "",
+      tempScale: "F",
       actualTemperature: "",
       dewPoint: "",
       relativeHumidity: "",
