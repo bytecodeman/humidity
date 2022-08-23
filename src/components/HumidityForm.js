@@ -165,7 +165,7 @@ const HumidityForm = (props) => {
           </div>
           <div className="md:w-1/2">
             <input
-              type="text"
+              type="number"
               id="actualTemperature"
               name="actualTemperature"
               value={formData.actualTemperature}
@@ -186,7 +186,7 @@ const HumidityForm = (props) => {
           </div>
           <div className="md:w-1/2">
             <input
-              type="text"
+              type="number"
               id="dewPoint"
               name="dewPoint"
               value={formData.dewPoint}
@@ -207,7 +207,7 @@ const HumidityForm = (props) => {
           </div>
           <div className="md:w-1/2">
             <input
-              type="text"
+              type="number"
               id="relativeHumidity"
               name="relativeHumidity"
               value={formData.relativeHumidity}
