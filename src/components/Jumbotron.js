@@ -2,14 +2,6 @@ import { useState } from "react";
 import logoPng from "../img/humidity-dewpoint.png";
 import logoWebP from "../img/humidity-dewpoint.webp";
 import ImgWithFallback from "./ImgWithFallback";
-import {
-  FacebookShareButton,
-  FacebookIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
-  TwitterShareButton,
-  TwitterIcon,
-} from "react-share-rc-18";
 
 function JumboTron() {
   const [showModal, setShowModal] = useState(false);
@@ -58,28 +50,6 @@ function JumboTron() {
               <li>Press "Calculate" to find the missing value.</li>
             </ol>
           </div>
-        </div>
-        <div className="text-center">
-          <TwitterShareButton
-            url={window.location.href}
-            title={document.title}
-            className="mr-5"
-          >
-            <TwitterIcon size={32} round={true} />
-          </TwitterShareButton>
-          <LinkedinShareButton
-            url={window.location.href}
-            title={document.title}
-            className="mr-5"
-          >
-            <LinkedinIcon size={32} round={true} />
-          </LinkedinShareButton>
-          <FacebookShareButton
-            url={window.location.href}
-            title={document.title}
-          >
-            <FacebookIcon size={32} round={true} />
-          </FacebookShareButton>
         </div>
         <hr className="my-6 border-gray-300" />
       </div>
