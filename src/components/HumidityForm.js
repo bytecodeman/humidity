@@ -196,7 +196,7 @@ const HumidityForm = (props) => {
             />
           </div>
         </div>
-        <div className="md:flex md:items-center mb-10">
+        <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/2 mb-1 md:mb-0">
             <label
               className="text-gray-500 block font-bold md:text-right pr-4"
